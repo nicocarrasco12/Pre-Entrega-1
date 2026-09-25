@@ -45,7 +45,6 @@ app.get('/titulo/:title', (req, res) => {
     }
 
     const resultadoMap = resultados.map(item => ({
-        id: item.id,
         titulo: item.titulo}));
     res.json(resultadoMap);
 });
@@ -74,11 +73,11 @@ app.get('/reparto/:act', (req, res) => {
         return res.status(404).json({ error: `No se encontró ningún título en el que participe el actor/actriz ${req.params.act}.` });
     }
 
-    const resultadoMapeado = resultados.map(item => ({
+    const resultadoMap = resultados.map(item => ({
         titulo: item.titulo,
         reparto: item.reparto
     }));
-    res.json(resultadoMapeado);
+    res.json(resultadoMap);
 });
 
 app.get('/trailer/:id', (req, res) => {
