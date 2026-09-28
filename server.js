@@ -81,7 +81,7 @@ app.get('/reparto/:act', (req, res) => {
 });
 
 app.get('/trailer/:id', (req, res) => {
-    const idBuscado = Number(req.params.id);
+    const idBuscado = parseInt(req.params.id);
 
     if (isNaN(idBuscado)) {
         return res.status(400).json({ error: 'El código ingresado debe ser un número válido.' });
